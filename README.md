@@ -41,6 +41,8 @@ src/
  │   │   ├─ header/
  │   │   ├─ sidebar/
  │   │   ├─ layout/
+ |   |   ├─ action-banner/
+ |   |   ├─ invoice/
  │   │   └─ appointment-card/
  │   ├─ pages/
  │   │   ├─ dashboard/
@@ -50,7 +52,9 @@ src/
  │   │   └─ profile/
  │   └─ models/
  │       └─ interfaces.interface.ts
- └─ styles.css
+ ├─ styles.css
+ ├─ index.html
+ └─ main.ts
 ```
 
 Each page has its own `.service.ts` file, making state management modular and testable.
@@ -146,11 +150,6 @@ For major changes, please open an issue first to discuss what you’d like to im
 ## 🧑‍💻 Author
 
 **Marven Eid**
-Front-End Developer | Angular Enthusiast
-📧 [Add your email or portfolio link here]
-
+Full Stack Developer | marveneid1@gmail.com
+marven-portfolio.netlify.app
 ---
-
-## 📄 License
-
-This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
