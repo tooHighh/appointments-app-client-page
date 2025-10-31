@@ -1,0 +1,19 @@
+<header class="header">
+  <div class="header-left">
+    <i class="fa-solid fa-bars" (click)="toogleSidebarState()"></i>
+    <h1 class="page-title">{{ pageTitle }}</h1>
+  </div>
+
+  <div class="header-right">
+    <span class="welcome-text">Welcome, {{ user.firstName }}!</span>
+    <div class="user-avatar" (click)="navigateTo()">
+      {{ user.initials }}
+    </div>
+    <div class="nav-footer">
+      <div class="nav-item logout" (click)="onLogout()">
+        <i class="fa-solid fa-arrow-right-from-bracket nav-icon"></i>
+        <span class="nav-label">Logout</span>
+      </div>
+    </div>
+  </div>
+</header>

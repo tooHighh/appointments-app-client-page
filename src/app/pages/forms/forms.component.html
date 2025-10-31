@@ -1,0 +1,46 @@
+<div class="forms-container">
+  <h1 class="page-title">My Forms</h1>
+
+  <div class="forms-list">
+    <div *ngFor="let form of formsService.forms" class="form-card">
+      <div class="form-content">
+        <h3 class="form-title">{{ form.title }}</h3>
+        <div class="form-status">
+          <span *ngIf="form.status === 'pending'" class="status pending"
+            >Pending</span
+          >
+          <span *ngIf="form.status === 'completed'" class="status completed">
+            Completed
+          </span>
+        </div>
+      </div>
+      <button
+        *ngIf="form.canFill; else completedStatus"
+        class="fill-button"
+        (click)="formsService.fillForm(form)"
+      >
+        Fill Form
+      </button>
+
+      <ng-template #completedStatus>
+        <span class="status completedStatus">
+          <svg
+            class="check-icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+          Completed
+        </span>
+      </ng-template>
+    </div>
+  </div>
+</div>

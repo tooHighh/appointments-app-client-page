@@ -1,0 +1,24 @@
+<div class="appointment-card">
+  <div class="card-content">
+    <div class="appointment-info">
+      <h3 class="appointment-title">{{ appointment.title }}</h3>
+      <div class="provider-info">
+        <span class="provider-icon"><i class="fa-solid fa-user"></i></span>
+        <span class="provider-name">{{ appointment.providerName }}</span>
+      </div>
+    </div>
+    <div class="appointment-datetime">
+      <div class="date">{{ appointment.date }}</div>
+      <div class="time">{{ appointment.time }}</div>
+    </div>
+  </div>
+  <div class="card-actions">
+    <button class="action-button location" (click)="onLocation()">
+      location
+    </button>
+    <button class="action-button reschedule" (click)="onReschedule()">
+      Reschedule
+    </button>
+    <button class="action-button cancel" (click)="onCancel()">Cancel</button>
+  </div>
+</div>

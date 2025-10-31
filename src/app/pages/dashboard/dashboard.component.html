@@ -1,0 +1,32 @@
+<div class="dashboard">
+  <div class="welcome-section">
+    <h1 class="welcome-title">Welcome back, {{ dashboardService.user.firstName }}!</h1>
+    <p class="welcome-subtitle">
+      Here's a summary of your upcoming appointments and tasks.
+    </p>
+  </div>
+
+  <app-action-banner
+    (updateSidebarFocusToForms)="dashboardService.onViewForms($event)"
+  ></app-action-banner>
+
+  <div class="appointments-section">
+    <h2 class="section-title">Upcoming Appointments</h2>
+
+    <div *ngIf="dashboardService.loading" class="loading">Loading appointments...</div>
+
+    <div *ngIf="!dashboardService.loading && dashboardService.appointments.length === 0" class="no-appointments">
+      <p>No upcoming appointments found.</p>
+    </div>
+
+    <div *ngIf="!dashboardService.loading && dashboardService.appointments.length > 0" class="appointments-list">
+      <app-appointment-card
+        *ngFor="let appointment of dashboardService.appointments"
+        [appointment]="appointment"
+        (reschedule)="dashboardService.onReschedule($event)"
+        (cancel)="dashboardService.onCancel($event)"
+      >
+      </app-appointment-card>
+    </div>
+  </div>
+</div>

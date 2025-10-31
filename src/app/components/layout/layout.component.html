@@ -1,0 +1,31 @@
+<div class="layout">
+  <app-sidebar
+    *ngIf="isSidebarVisible"
+    (toggleSidebar)="toogleSidebarState()"
+    [activeItem]="layoutService.activeItem"
+    (navigationChange)="onNavigationChange($event)"
+    (logout)="onLogout()"
+    (activeItemChange)="layoutService.pageTitle = $event"
+    
+  >
+  </app-sidebar>
+
+  <div class="main-content">
+    <app-header
+      [pageTitle]="pageTitle"
+      (updateSidebarFocusToProfile)="layoutService.updateFocus($event)"
+      (toogleSidebarEvent)="toogleSidebarState()"
+    ></app-header>
+    <main class="content">
+      <div
+        class="router-wrapper"
+        [@fadeInOut]="layoutService.getOutletState(outlet)"
+      >
+        <router-outlet
+          #outlet="outlet"
+          (activate)="layoutService.onRouteActivate($event)"
+        ></router-outlet>
+      </div>
+    </main>
+  </div>
+</div>

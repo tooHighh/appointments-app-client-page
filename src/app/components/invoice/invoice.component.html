@@ -1,0 +1,38 @@
+<div class="bgBlur">
+  <div>
+    <div class="header">
+      <h1><b>Invoice</b></h1>
+      <p><i class="fa-solid fa-xmark" (click)="(closeWindow())"></i></p>
+    </div>
+    <p style="color: rgb(114, 114, 114)">{{ invoiceNumber }}</p>
+
+    <br />
+    <span class="billedTo">
+      <b>Billed To: </b>
+      <p>{{ customerName }}</p>
+    </span>
+    <br />
+    <span class="service">
+      <b><p>Service</p></b>
+      <b><p>Amount</p></b>
+    </span>
+    <span class="items">
+      <ul>
+        <li *ngFor="let item of items">
+          <p>{{ item.description }}</p>
+          <p>{{ item.price | currency }}</p>
+        </li>
+      </ul>
+    </span>
+    <span class="total"
+      ><b><p>Total</p></b>
+      <b
+        ><p>{{ totalAmount | currency }}</p></b
+      >
+    </span>
+    <br />
+    <div class="button">
+      <button><b>Download PDF</b></button>
+    </div>
+  </div>
+</div>

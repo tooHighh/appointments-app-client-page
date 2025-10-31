@@ -1,0 +1,125 @@
+.appointment-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e5e7eb;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.appointment-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  padding: 0.5em 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.appointment-info {
+  flex: 1;
+}
+
+.appointment-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #3b82f6;
+  margin: 0 0 0.5rem 0;
+}
+
+.provider-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+.provider-icon {
+  font-size: 0.75rem;
+}
+
+.appointment-datetime {
+  text-align: right;
+  color: #374151;
+}
+
+.date {
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.time {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.card-actions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: flex-end;
+}
+
+.action-button {
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 1px solid;
+}
+
+.location {
+  background: white;
+  color: #3b82f7;
+}
+
+.location:hover {
+  background: #dbeafe;
+}
+
+.reschedule {
+  background: white;
+  color: #6b7280;
+  border-color: #d1d5db;
+}
+
+.reschedule:hover {
+  background: #f9fafb;
+  border-color: #9ca3af;
+}
+
+.cancel {
+  background: white;
+  color: #ef4444;
+  border-color: #fecaca;
+}
+
+.cancel:hover {
+  background: #fef2f2;
+  border-color: #fca5a5;
+}
+
+@media (max-width: 480px) {
+  .card-actions {
+    flex-direction: column;
+  }
+
+  .card-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .appointment-datetime {
+    text-align: center;
+    margin-top: 0.5rem;
+  }
+}

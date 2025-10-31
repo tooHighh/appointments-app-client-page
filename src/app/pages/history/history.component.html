@@ -1,0 +1,50 @@
+<div class="history-container">
+  <app-invoice
+    class="after-view"
+    *ngIf="historyService.isActivated"
+    (closeWindowEvent)="historyService.viewInvoice()"
+  ></app-invoice>
+
+  <h1 class="page-title">History & Invoices</h1>
+
+  <div class="history-card">
+    <div class="table-container">
+      <table class="history-table">
+        <thead>
+          <tr>
+            <th class="table-header">Service</th>
+            <th class="table-header">Date</th>
+            <th class="table-header">Status</th>
+            <th class="table-header"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            *ngFor="let service of historyService.serviceHistory"
+            class="table-row"
+          >
+            <td class="service-cell" data-label="Service">
+              <div class="service-info">
+                <div class="service-name">{{ service.service }}</div>
+                <div class="provider-name">{{ service.provider }}</div>
+              </div>
+            </td>
+            <td class="date-cell" data-label="Date">{{ service.date }}</td>
+            <td class="status-cell" data-label="Status">
+              <span class="status-badge completed">{{ service.status }}</span>
+            </td>
+            <td class="action-cell" data-label="">
+              <button
+                class="invoice-link"
+                (click)="historyService.viewInvoice()"
+                [disabled]="!service.invoiceUrl"
+              >
+                View Invoice
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

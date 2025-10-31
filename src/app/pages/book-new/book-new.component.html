@@ -1,0 +1,80 @@
+<div class="page-container">
+  <h1>Book A New Appointment</h1>
+  <p>Follow the steps below to schedule your next service.</p>
+
+  <form #f="ngForm" (ngSubmit)="bookNewService.onSubmit(f)">
+    <div>
+      <label for="service">1. Select a Service</label>
+      <select
+        id="service"
+        name="service"
+        [(ngModel)]="bookNewService.appointment.service"
+        required
+      >
+        <option value="" disabled selected>Select a service</option>
+        <option value="checkup">Dental Check-up</option>
+        <option value="consultation">Business Consultation</option>
+        <option value="pt-session">Personal Trainer Session</option>
+      </select>
+    </div>
+    <div class="error" *ngIf="f.submitted && f.controls['service']?.invalid">
+      Please select a service.
+    </div>
+
+    <br />
+    <div>
+      <label for="provider">2. Choose a Provider (Optional)</label>
+      <select id="provider" name="provider" [(ngModel)]="bookNewService.appointment.provider">
+        <option value="any">Any Available</option>
+        <option value="alan">Dr. Alan Grant</option>
+        <option value="consulting">Alice Consulting</option>
+        <option value="gym">Chris Gym</option>
+      </select>
+    </div>
+
+    <br />
+    <div>
+      <label for="date">3. Pick a Date</label>
+      <input
+        type="date"
+        id="date"
+        name="date"
+        [(ngModel)]="bookNewService.appointment.date"
+        required
+      />
+    </div>
+    <div class="error" *ngIf="f.submitted && f.controls['date']?.invalid">
+      Please choose a date.
+    </div>
+
+    <br />
+    <div>
+      <label>Pick a Time</label>
+      <div class="time">
+        <button
+          type="button"
+          *ngFor="let time of bookNewService.availableTimes"
+          [class.active]="bookNewService.appointment.time === time.time"
+          [disabled]="!time.available"
+          (click)="bookNewService.selectTime(time.time)"
+        >
+          {{ time.time }}
+        </button>
+      </div>
+    </div>
+
+    <div class="error" *ngIf="f.submitted && !bookNewService.appointment.time">
+      Please select a time.
+    </div>
+
+    <br />
+
+    <div class="confirm">
+      <div>
+        <button type="submit" [disabled]="f.invalid">
+          Confirm Appointment
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

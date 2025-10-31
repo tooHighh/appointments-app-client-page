@@ -1,0 +1,20 @@
+<nav class="sidebar">
+  <div class="header-left">
+    <div class="logo">
+      <div class="logo-icon">AG</div>
+      <span class="logo-text">YourLogo</span>
+    </div>
+  </div>
+  <br />
+  <ul class="nav-list">
+    <li
+      *ngFor="let item of sidebarService.navigationItems"
+      class="nav-item"
+      [class.active]="item.id === sidebarService.activeItem"
+      (click)="onItemClick(item)"
+    >
+      <div class="nav-icon" [innerHTML]="item.icon"></div>
+      <span class="nav-label">{{ item.label }}</span>
+    </li>
+  </ul>
+</nav>
