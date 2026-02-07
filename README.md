@@ -152,6 +152,6 @@ For major changes, please open an issue first to discuss what you’d like to im
 ## 🧑‍💻 Author
 
 **Marven Eid**
-Full Stack Developer | marveneid1@gmail.com
+Frontend Developer | marveneid1@gmail.com |
 marven-portfolio.netlify.app
 ---
