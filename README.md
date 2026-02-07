@@ -7,6 +7,7 @@ A fully responsive **Angular web application** for managing appointments, viewin
 ## 🚀 Features
 
 ### 🔹 Dashboard
+<img width="1905" height="912" alt="Screenshot 2026-02-07 194617" src="https://github.com/user-attachments/assets/9114c62f-9ede-4d72-bdae-f037abff329d" />
 
 * Displays a quick overview of appointments and activity.
 * Dynamically updates using the **DashboardService**.
